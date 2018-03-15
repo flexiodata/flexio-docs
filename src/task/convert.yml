@@ -1,0 +1,11 @@
+name: Convert
+
+method_name:
+  javascript: convert
+  php: convert
+
+short_description: |
+  Converts the input from one format to another
+
+description: |
+  Longer description goes here...

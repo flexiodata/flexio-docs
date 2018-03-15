@@ -1,0 +1,11 @@
+name: Request
+
+method_name:
+  javascript: request
+  php: request
+
+short_description: |
+  Issues an HTTP request
+
+description: |
+  Longer description goes here...
