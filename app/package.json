@@ -10,6 +10,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "codemirror": "^5.35.0",
+    "js-yaml": "^3.11.0",
+    "marked": "^0.3.17",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
