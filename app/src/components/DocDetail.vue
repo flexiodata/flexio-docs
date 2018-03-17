@@ -40,11 +40,7 @@
 
   export default {
     props: {
-      'base-path': {
-        type: String,
-        default: 'https://raw.githubusercontent.com/flexiodata/flexio-docs/master'
-      },
-      'doc-path': {
+      'full-path': {
         type: String,
         default: ''
       },
@@ -54,7 +50,7 @@
       }
     },
     watch: {
-      docPath: {
+      fullPath: {
         handler: 'readYaml',
         immediate: true
       },
@@ -104,7 +100,7 @@
     methods: {
       readYaml() {
         try {
-          axios.get(this.basePath+this.docPath)
+          axios.get(this.fullPath)
             .then(response => {
               this.yaml_text = response.data
               this.editor_yaml.setValue(this.yaml_text)
