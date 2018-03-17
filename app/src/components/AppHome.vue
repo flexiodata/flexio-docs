@@ -6,18 +6,16 @@
       :paths="paths"
       :doc-path.sync="doc_path"
     />
-    <div class="flex-fill flex flex-column">
-      <doc-definition
-        class="flex-fill relative"
-        :full-path="full_path"
-      />
-    </div>
+    <doc-detail
+      class="flex-fill relative"
+      :full-path="full_path"
+    />
   </div>
 </template>
 
 <script>
   import DocNav from './DocNav'
-  import DocDefinition from './DocDefinition'
+  import DocDetail from './DocDetail'
 
   const base_path = 'https://raw.githubusercontent.com/flexiodata/flexio-docs/master/src/'
 
@@ -51,7 +49,7 @@
   export default {
     components: {
       DocNav,
-      DocDefinition
+      DocDetail
     },
     data() {
       return {
