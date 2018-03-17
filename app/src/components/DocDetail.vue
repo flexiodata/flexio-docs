@@ -8,7 +8,7 @@
         <textarea ref="textarea-json"></textarea>
       </div>
     </div>
-    <div class="flex-fill bt b--black-20" v-html="preview_markup"></div>
+    <div class="flex-fill bt b--black-20 pa2" v-html="preview_markup"></div>
   </div>
 </template>
 
@@ -81,13 +81,15 @@
 
         for (var key in this.json_obj) {
           if (this.json_obj.hasOwnProperty(key)) {
+            markup += '<h6 class="ttu silver css-key">' + key + '</h6>'
+
             var val = this.json_obj[key]
             if (typeof val == 'string')
-              markup += val + '\n\n'
+              markup += marked(val + '\n\n')
           }
         }
 
-        return marked(markup)
+        return markup
       }
     },
     methods: {
@@ -125,5 +127,17 @@
   .CodeMirror {
     width: 100%;
     height: 100%;
+  }
+
+  h6.css-key:first-child {
+    margin-top: 0.25rem;
+  }
+
+  h6.css-key {
+    /*
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+    */
+    margin: 3em 0 1em;
   }
 </style>
