@@ -1,9 +1,9 @@
 <template>
-  <div class="mv1 pa1">
+  <div>
     <ul class="list ma0 pa0" style="cursor: default">
       <li
-        class="flex flex-row items-center pa1 f6 pointer hover-white hover-bg-blue br1"
-        :class="[ isActivePath(path) ? 'bg-light-gray black' : 'silver' ]"
+        class="flex flex-row items-center pa2 f6 pointer"
+        :class="[ isActivePath(path) ? 'white bg-blue' : 'dark-gray hover-black hover-bg-light-gray' ]"
         :key="path"
         v-for="path in paths"
         @click="$emit('update:docPath', path)"
