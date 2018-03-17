@@ -2,20 +2,22 @@
   <div class="flex flex-row w-100">
     <doc-nav
       class="br b--black-10 overflow-auto"
-      style="min-width: 14rem"
+      style="min-width: 15rem"
       :paths="paths"
       :doc-path.sync="doc_path"
     />
-    <doc-detail
-      class="flex-fill relative"
-      :full-path="full_path"
-    />
+    <div class="flex-fill flex flex-column">
+      <doc-definition
+        class="flex-fill relative"
+        :full-path="full_path"
+      />
+    </div>
   </div>
 </template>
 
 <script>
   import DocNav from './DocNav'
-  import DocDetail from './DocDetail'
+  import DocDefinition from './DocDefinition'
 
   const base_path = 'https://raw.githubusercontent.com/flexiodata/flexio-docs/master/src/'
 
@@ -49,7 +51,7 @@
   export default {
     components: {
       DocNav,
-      DocDetail
+      DocDefinition
     },
     data() {
       return {
