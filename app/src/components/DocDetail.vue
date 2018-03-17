@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-column absolute absolute--fill">
+  <div class="flex flex-column relative">
     <div class="absolute top-0 right-0 z-5 flex flex-row justify-end pa2" v-if="showToggle">
       <button
         type="button"
@@ -65,6 +65,7 @@
     data() {
       return {
         mode: 'yaml', // 'json' or 'yaml'
+        error_msg: '',
         yaml_text: '',
         editor_json: null,
         editor_yaml: null
@@ -87,6 +88,9 @@
       })
     },
     computed: {
+      has_error() {
+        return this.error_msg.length > 0
+      },
       json_text() {
         try {
           var json_obj = yaml.load(this.yaml_text)
@@ -99,16 +103,25 @@
     },
     methods: {
       readYaml() {
+        this.error_msg = ''
+
         try {
           axios.get(this.fullPath)
             .then(response => {
+              this.error_msg = ''
               this.yaml_text = response.data
+              this.editor_yaml.setValue(this.yaml_text)
+            })
+            .catch(response => {
+              this.error_msg = response.message
+              this.yaml_text = 'error: ' + response.message
               this.editor_yaml.setValue(this.yaml_text)
             })
         }
         catch(e) {
-          this.yaml_text = ''
-          this.json_text = ''
+          this.error_msg = e.message
+          this.yaml_text = 'error: ' + e.message
+          this.editor_yaml.setValue(this.yaml_text)
         }
       }
     }

@@ -16,21 +16,15 @@
 </template>
 
 <script>
-  const paths = [
-    'task/convert',
-    'task/request'
-  ]
-
   export default {
     props: {
       'doc-path': {
         type: String,
         default: ''
-      }
-    },
-    data() {
-      return {
-        paths
+      },
+      'paths': {
+        type: Array,
+        default: () => { return [] }
       }
     },
     methods: {
