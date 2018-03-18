@@ -81,7 +81,7 @@
 
         for (var key in this.json_obj) {
           if (this.json_obj.hasOwnProperty(key)) {
-            markup += '<h6 class="ttu silver css-key">' + key + '</h6>'
+            markup += '<h6 class="pa1 bg-near-white ttu silver css-key">' + key + '</h6>'
 
             var val = this.json_obj[key]
             if (typeof val == 'string')
@@ -130,7 +130,7 @@
   }
 
   h6.css-key:first-child {
-    margin-top: 0.25rem;
+    margin-top: 0;
   }
 
   h6.css-key {
