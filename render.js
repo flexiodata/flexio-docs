@@ -10,7 +10,7 @@ function _toMarkdownList(arr) {
     }
   } else if (util.isObject(arr) && Object.keys(arr).length > 0) {
     var keys = Object.keys(arr)
-    keys.forEach(function(key) { md += '* **' + util.capitalizeFirstLetter(key) + '**: ' + String(arr[key]) + '\n' })
+    keys.forEach(function(key) { md += '* **' + key + '**: ' + String(arr[key]) + '\n' })
     md += '\n'
   }
 
