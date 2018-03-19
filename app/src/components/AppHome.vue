@@ -23,8 +23,8 @@
     try {
       docs.push({
         label: path,
-        yaml: require('raw-loader!../../../def/' + path + '.yml'),
-        json: require('json-loader!yaml-loader!../../../def/' + path + '.yml'),
+        yaml_text: require('raw-loader!../../../def/' + path + '.yml'),
+        json_text: require('json-loader!yaml-loader!../../../def/' + path + '.yml'),
         is_valid: true
       })
     }
@@ -32,8 +32,8 @@
     {
       docs.push({
         label: path,
-        yaml: '',
-        json: '',
+        yaml_text: '',
+        json_text: '',
         is_valid: false
       })
     }

@@ -105,8 +105,8 @@
 
           try {
             this.error_msg = ''
-            this.yaml_orig = this.activeDoc.yaml
-            this.yaml_text = this.activeDoc.yaml
+            this.yaml_orig = this.activeDoc.yaml_text
+            this.yaml_text = this.activeDoc.yaml_text
           }
           catch(e) {
             this.error_msg = e.message

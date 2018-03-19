@@ -44,7 +44,7 @@ module.exports = {
       {
         test: /\.yml$/,
         loader: 'yaml-loader',
-        exclude: /node_modules/
+        exclude: [/node_modules/,/def/]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
