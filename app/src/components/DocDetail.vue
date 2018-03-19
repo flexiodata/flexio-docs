@@ -22,17 +22,13 @@
 
   export default {
     props: {
-      'docs': {
-        type: Array,
-        default: () => { return [] }
-      },
-      'doc-path': {
+      'active-doc': {
         type: String,
         default: ''
       }
     },
     watch: {
-      docPath: {
+      activeDoc: {
         handler: 'readYaml',
         immediate: true
       },
@@ -107,7 +103,7 @@
 
           try {
             this.error_msg = ''
-            this.yaml_text = this.docs[this.docPath].yaml
+            this.yaml_text = this.activeDoc.yaml
           }
           catch(e) {
             this.error_msg = e.message

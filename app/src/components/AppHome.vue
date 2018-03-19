@@ -3,13 +3,12 @@
     <doc-nav
       class="br b--black-10 overflow-auto"
       style="min-width: 15rem"
-      :paths="paths"
-      :doc-path.sync="doc_path"
+      :docs="docs"
+      :active-doc.sync="active_doc"
     />
     <doc-detail
       class="flex-fill relative"
-      :docs="docs"
-      :doc-path="doc_path"
+      :active-doc="active_doc"
     />
   </div>
 </template>
@@ -17,8 +16,6 @@
 <script>
   import DocNav from './DocNav'
   import DocDetail from './DocDetail'
-
-  const base_path = 'https://raw.githubusercontent.com/flexiodata/flexio-docs/master/src/'
 
   const paths = [
     'task/create',
@@ -47,20 +44,29 @@
     'task/write'
   ]
 
-  const docs = []
-
+  var docs = []
   paths.forEach(function(path) {
     try {
-      docs[path] = {
+      docs.push({
         label: path,
         yaml: require('raw-loader!../../../src/' + path + '.yml'),
-        json: require('json-loader!yaml-loader!../../../src/' + path + '.yml')
-      }
+        json: require('json-loader!yaml-loader!../../../src/' + path + '.yml'),
+        is_valid: true
+      })
     }
     catch(e)
     {
-
+      docs.push({
+        label: path,
+        yaml: '',
+        json: '',
+        is_valid: false
+      })
     }
+  })
+
+  var active_doc = docs.find(function(doc) {
+    return doc.is_valid
   })
 
   export default {
@@ -70,15 +76,8 @@
     },
     data() {
       return {
-        paths,
-        base_path,
-        doc_path: paths[0],
-        docs
-      }
-    },
-    computed: {
-      full_path() {
-        return this.base_path + this.doc_path + '.yml'
+        docs,
+        active_doc
       }
     }
   }
