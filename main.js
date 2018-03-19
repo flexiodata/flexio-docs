@@ -1,12 +1,4 @@
 
-const _renderList = function(arr) {
-  if (Array.isArray(arr) && arr.length > 0) {
-
-  }
-
-  return arr
-}
-
 const _renderTable = function(arr, cols) {
   var md = ''
 
@@ -24,6 +16,7 @@ const _renderTable = function(arr, cols) {
       md += '\n'
     })
 
+    // remove extra line breaks
     md = md.replace(/\n\n/g, '\n')
 
     return md
@@ -33,9 +26,6 @@ const _renderTable = function(arr, cols) {
 }
 
 const _render = function(val, type, cols) {
-  if (type === 'list')
-    return _renderList(val, cols)
-
   if (type === 'table')
     return _renderTable(val, cols)
 
@@ -43,12 +33,10 @@ const _render = function(val, type, cols) {
     return val
 }
 
-export const renderList = _renderList
 export const renderTable = _renderTable
 export const render = _render
 
 export default {
-  renderList: _renderList,
   renderTable: _renderTable,
   render: _render
 }
