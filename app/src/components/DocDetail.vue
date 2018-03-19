@@ -8,7 +8,7 @@
         <textarea ref="textarea-json"></textarea>
       </div>
     </div>
-    <div class="flex-fill bt b--black-20 pa2" v-html="preview_markup"></div>
+    <div class="flex-fill bt b--black-20 pa2 overflow-auto" v-html="preview_markup"></div>
   </div>
 </template>
 
@@ -16,6 +16,7 @@
   import yaml from 'js-yaml'
   import marked from 'marked'
   import CodeMirror from 'codemirror'
+  import util from '../../../main'
 
   require('codemirror/mode/yaml/yaml.js')
   require('codemirror/mode/javascript/javascript.js')
@@ -86,11 +87,16 @@
 
         for (var key in this.json_obj) {
           if (this.json_obj.hasOwnProperty(key)) {
-            markup += '<h6 class="pa1 bg-near-white ttu silver css-key">' + key + '</h6>'
+            markup += '<h6 class="pa1 ttu silver css-key">' + key + '</h6>'
 
             var val = this.json_obj[key]
             if (typeof val == 'string')
-              markup += marked(val + '\n\n')
+              markup += marked(val)
+
+            if (Array.isArray(val))
+              markup += marked(util.renderTable(val))
+
+            markup += '\n\n'
           }
         }
 
@@ -139,6 +145,62 @@
     border-bottom: 1px solid #eee;
     padding-bottom: 3px;
     */
-    margin: 3em 0 1em;
+    margin: 3em 0 0;
   }
+
+  /* marked */
+
+  code,
+  pre {
+    font-family: "Roboto Mono", Monaco, courier, monospace;
+    font-size: 0.8em;
+    background-color: #f8f8f8;
+    -webkit-font-smoothing: initial;
+    -moz-osx-font-smoothing: initial;
+  }
+  code {
+    color: #e96900;
+    padding: 3px 5px;
+    margin: 0 2px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  pre code {
+    color: #525252;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 1.2em auto;
+    padding: 0;
+    display: block;
+    overflow-x: auto;
+  }
+
+  table td,
+  table th {
+    line-height: 1.5em;
+    padding: 0.4em 0.8em;
+    border: none;
+    border: 1px solid #ddd;
+  }
+
+  table th {
+    font-weight: bold;
+    text-align: left;
+  }
+
+  table th,
+  table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+  }
+
+  table th code,
+  table tr:nth-child(2n) code {
+    background-color: #efefef;
+  }
+
 </style>
