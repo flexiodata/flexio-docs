@@ -4,11 +4,11 @@
       <div class="flex-fill">
         <textarea ref="textarea-yaml"></textarea>
       </div>
-      <div class="flex-fill">
+      <div class="flex-fill" v-show="showJson">
         <textarea ref="textarea-json"></textarea>
       </div>
     </div>
-    <div class="flex-fill bt b--black-20 pa2 overflow-auto" v-html="preview_markup"></div>
+    <div class="flex-fill bt b--black-20 pa2 overflow-auto" v-html="preview_markup" v-show="showPreview"></div>
   </div>
 </template>
 
@@ -26,6 +26,14 @@
       'active-doc': {
         type: Object,
         default: () => { return {} }
+      },
+      'show-json': {
+        type: Boolean,
+        default: true
+      },
+      'show-preview': {
+        type: Boolean,
+        default: true
       }
     },
     watch: {

@@ -9,6 +9,7 @@
     <doc-detail
       class="flex-fill relative"
       :active-doc="active_doc"
+      v-bind="$props"
     />
   </div>
 </template>
@@ -23,6 +24,16 @@
   })
 
   export default {
+    props: {
+      'show-json': {
+        type: Boolean,
+        default: true
+      },
+      'show-preview': {
+        type: Boolean,
+        default: true
+      }
+    },
     components: {
       DocNav,
       DocDetail
