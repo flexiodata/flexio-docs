@@ -27,8 +27,8 @@
         default: () => { return [] }
       },
       'active-doc': {
-        type: String,
-        default: ''
+        type: Object,
+        default: () => { return {} }
       }
     },
     methods: {

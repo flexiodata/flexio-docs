@@ -24,8 +24,8 @@
   export default {
     props: {
       'active-doc': {
-        type: String,
-        default: ''
+        type: Object,
+        default: () => { return {} }
       }
     },
     watch: {
@@ -87,15 +87,10 @@
 
         for (var key in this.json_obj) {
           if (this.json_obj.hasOwnProperty(key)) {
-            markup += '<h6 class="pa1 bg-near-white ttu silver css-key">' + key + '</h6>'
-
             var val = this.json_obj[key]
-            if (typeof val == 'string')
-              markup += marked(val)
 
-            if (Array.isArray(val))
-              markup += marked(util.renderTable(val))
-
+            markup += '<h6 class="pa1 bg-near-white ttu silver css-key">' + key + '</h6>'
+            markup += marked(util.render(val))
             markup += '\n\n'
           }
         }

@@ -45,7 +45,7 @@ parameters:
       Data to include as URL parameters in a GET request.
 
   - property: data
-    type: object|string
+    type: "object&#124;string"
     description: |
       Data to include in a POST request.
 
