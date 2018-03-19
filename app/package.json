@@ -1,7 +1,7 @@
 {
-  "name": "flexio-docs",
+  "name": "flexio-docs-app",
   "version": "1.0.0",
-  "description": "Flex.io Structured Documentation",
+  "description": "Flex.io Structured Docs App",
   "author": "David Z. Williams <dave@flex.io>",
   "private": true,
   "scripts": {
@@ -10,7 +10,6 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
     "codemirror": "^5.35.0",
     "js-yaml": "^3.11.0",
     "marked": "^0.3.17",
@@ -41,6 +40,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "raw-loader": "^0.5.1",
     "rimraf": "^2.6.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
@@ -52,7 +52,8 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "yaml-loader": "^0.5.0"
   },
   "engines": {
     "node": ">= 6.0.0",

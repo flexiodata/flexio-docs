@@ -8,7 +8,8 @@
     />
     <doc-detail
       class="flex-fill relative"
-      :full-path="full_path"
+      :docs="docs"
+      :doc-path="doc_path"
     />
   </div>
 </template>
@@ -46,6 +47,22 @@
     'task/write'
   ]
 
+  const docs = []
+
+  paths.forEach(function(path) {
+    try {
+      docs[path] = {
+        label: path,
+        yaml: require('raw-loader!../../../src/' + path + '.yml'),
+        json: require('json-loader!yaml-loader!../../../src/' + path + '.yml')
+      }
+    }
+    catch(e)
+    {
+
+    }
+  })
+
   export default {
     components: {
       DocNav,
@@ -55,7 +72,8 @@
       return {
         paths,
         base_path,
-        doc_path: paths[0]
+        doc_path: paths[0],
+        docs
       }
     },
     computed: {

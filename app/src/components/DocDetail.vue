@@ -14,7 +14,6 @@
 
 <script>
   import yaml from 'js-yaml'
-  import axios from 'axios'
   import marked from 'marked'
   import CodeMirror from 'codemirror'
 
@@ -23,13 +22,17 @@
 
   export default {
     props: {
-      'full-path': {
+      'docs': {
+        type: Array,
+        default: () => { return [] }
+      },
+      'doc-path': {
         type: String,
         default: ''
       }
     },
     watch: {
-      fullPath: {
+      docPath: {
         handler: 'readYaml',
         immediate: true
       },
@@ -66,7 +69,12 @@
         return this.error_msg.length > 0
       },
       json_obj() {
-        return yaml.load(this.yaml_text)
+        try {
+          return yaml.load(this.yaml_text)
+        }
+        catch(e) {
+          return e
+        }
       },
       json_text() {
         try {
@@ -94,26 +102,20 @@
     },
     methods: {
       readYaml() {
-        this.error_msg = ''
+        this.$nextTick(() => {
+          this.error_msg = ''
 
-        try {
-          axios.get(this.fullPath)
-            .then(response => {
-              this.error_msg = ''
-              this.yaml_text = response.data
-              this.editor_yaml.setValue(this.yaml_text)
-            })
-            .catch(response => {
-              this.error_msg = response.message
-              this.yaml_text = 'error: ' + response.message
-              this.editor_yaml.setValue(this.yaml_text)
-            })
-        }
-        catch(e) {
-          this.error_msg = e.message
-          this.yaml_text = 'error: ' + e.message
+          try {
+            this.error_msg = ''
+            this.yaml_text = this.docs[this.docPath].yaml
+          }
+          catch(e) {
+            this.error_msg = e.message
+            this.yaml_text = 'error: ' + e.message
+          }
+
           this.editor_yaml.setValue(this.yaml_text)
-        }
+        })
       }
     }
   }
