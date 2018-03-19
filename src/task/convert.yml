@@ -5,7 +5,21 @@ method_name:
   php: convert
 
 short_description: |
-  Converts the input from one format to another
+  Converts the input from one format to another.
 
 description: |
-  Longer description goes here...
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit dui posuere interdum tristique. Pellentesque nunc purus, sodales eget vulputate eget, auctor in quam. Pellentesque vehicula lacus euismod augue tristique lacinia. Nam id iaculis arcu. Curabitur non tincidunt ex. Integer et gravida enim. Proin congue id justo eget imperdiet.
+
+returns: |
+  The body response for the HTTP request.
+
+parameters:
+  - property: input
+    type: object
+    description: |
+      Format specifier for the input; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
+
+  - property: output
+    type: object
+    description: |
+      Format specifier for the output; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.

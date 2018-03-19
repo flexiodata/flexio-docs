@@ -39,6 +39,7 @@
     data() {
       return {
         error_msg: '',
+        yaml_orig: '',
         yaml_text: '',
         editor_json: null,
         editor_yaml: null
@@ -103,10 +104,12 @@
 
           try {
             this.error_msg = ''
+            this.yaml_orig = this.activeDoc.yaml
             this.yaml_text = this.activeDoc.yaml
           }
           catch(e) {
             this.error_msg = e.message
+            this.yaml_orig = 'error: ' + e.message
             this.yaml_text = 'error: ' + e.message
           }
 
