@@ -16,7 +16,7 @@
   import yaml from 'js-yaml'
   import marked from 'marked'
   import CodeMirror from 'codemirror'
-  import util from '../../../main'
+  import render from '../../../render'
 
   require('codemirror/mode/yaml/yaml.js')
   require('codemirror/mode/javascript/javascript.js')
@@ -90,7 +90,7 @@
             var val = this.json_obj[key]
 
             markup += '<h6 class="pa1 bg-near-white ttu silver css-key">' + key + '</h6>'
-            markup += marked(util.render(val))
+            markup += marked(render.toMarkdown(val))
             markup += '\n\n'
           }
         }
