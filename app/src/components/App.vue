@@ -7,7 +7,7 @@
           type="button"
           style="outline: 0"
           class="f6 ttu b ba pointer dim br1 pv1 ph3"
-          :class="show_json ? 'b--blue bg-blue white' : 'b--mid-gray bg-white mid-gray'"
+          :class="show_json ? 'b--blue bg-blue white' : 'b--light-silver bg-white light-silver'"
           @click="show_json = !show_json"
         >
           JSON
@@ -16,7 +16,7 @@
           type="button"
           style="outline: 0"
           class="f6 ttu b ba pointer dim br1 pv1 ph3"
-          :class="show_preview ? 'b--blue bg-blue white' : 'b--mid-gray bg-white mid-gray'"
+          :class="show_preview ? 'b--blue bg-blue white' : 'b--light-silver bg-white light-silver'"
           @click="show_preview = !show_preview"
         >
           Preview
