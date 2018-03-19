@@ -27,6 +27,13 @@ function isPlainObject(obj) {
 }
 
 /**
+ * Quick easy way to capitalize the first letter of a word
+ */
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+/**
  * Quick check to see if we're trying to render an object or an array of non-objects
  */
 function isLikeList(val) {
@@ -65,7 +72,7 @@ const _renderList = function(arr) {
     }
   } else if (isObject(arr) && Object.keys(arr).length > 0) {
     var keys = Object.keys(arr)
-    keys.forEach(function(key) { md += '* **' + key + '**: ' + String(arr[key]) + '\n' })
+    keys.forEach(function(key) { md += '* **' + capitalizeFirstLetter(key) + '**: ' + String(arr[key]) + '\n' })
     md += '\n'
   }
 
@@ -78,7 +85,7 @@ const _renderTable = function(arr) {
   if (Array.isArray(arr) && arr.length > 0) {
     var cols = Object.keys(arr[0])
 
-    md += cols.join(' | ')
+    md += cols.map(function(col) { return capitalizeFirstLetter(col) }).join(' | ')
     md += '\n'
     md += cols.map(function() { return '---' }).join(' | ')
     md += '\n'

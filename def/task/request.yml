@@ -22,7 +22,7 @@ parameters:
   - property: method
     type: string
     description: |
-      the http method to use when making the request; options are: `GET` and `POST`.
+      The HTTP method to use when making the request; options are: `GET` and `POST`.
 
   - property: connection
     type: string
@@ -52,4 +52,4 @@ parameters:
   - property: headers
     type: object
     description: |
-      An object with where the keys are the http headers to set and the corresponding values are the values to which to set those headers.
+      An object with where the keys are the HTTP headers to set and the corresponding values are the values to which to set those headers.
