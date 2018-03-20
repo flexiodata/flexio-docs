@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Flex.io Structured Docs App",
   "author": "David Z. Williams <dave@flex.io>",
+  "main": "src/main.js",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
