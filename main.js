@@ -1,7 +1,11 @@
-import render from './render'
+import docs from './docs'
 
-export default {
-  toMarkdownList: render.toMarkdownList,
-  toMarkdownTable: render.toMarkdownTable,
-  toMarkdown: render.toMarkdown
+var app = {
+  docs: docs,
+  getMarkdown(path, key) {
+    var doc = docs.find(function(doc) { return doc.label === path })
+    return doc && doc[key] ? doc[key] : ''
+  }
 }
+
+export default app
