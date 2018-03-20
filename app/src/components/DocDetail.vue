@@ -147,7 +147,7 @@
     margin: 3em 0 0;
   }
 
-  /* marked */
+  /* preview area */
 
   .css-preview {
     & h1,
