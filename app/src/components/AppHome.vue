@@ -17,7 +17,7 @@
 <script>
   import DocNav from './DocNav'
   import DocDetail from './DocDetail'
-  import docs from '../../../src/docs'
+  import docs from '../../src/docs'
 
   var active_doc = docs.find(function(doc) {
     return doc.is_valid
