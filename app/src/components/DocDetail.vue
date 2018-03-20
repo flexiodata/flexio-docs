@@ -8,7 +8,7 @@
         <textarea ref="textarea-json"></textarea>
       </div>
     </div>
-    <div class="flex-fill bt b--black-20 pa2 overflow-auto" v-html="preview_markup" v-show="showPreview"></div>
+    <div class="flex-fill bt b--black-20 pa2 overflow-auto css-preview" v-html="preview_markup" v-show="showPreview"></div>
   </div>
 </template>
 
@@ -130,10 +130,6 @@
 </script>
 
 <style>
-  button {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-
   .CodeMirror {
     width: 100%;
     height: 100%;
@@ -153,57 +149,137 @@
 
   /* marked */
 
-  code,
-  pre {
-    font-family: "Roboto Mono", Monaco, courier, monospace;
-    font-size: 0.8em;
-    background-color: #f8f8f8;
-    -webkit-font-smoothing: initial;
-    -moz-osx-font-smoothing: initial;
-  }
-  code {
-    color: #e96900;
-    padding: 3px 5px;
-    margin: 0 2px;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-  pre code {
-    color: #525252;
-    font-size: 12px;
-    line-height: 18px;
-  }
+  .css-preview {
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & h5,
+    & h6 {
+      line-height: initial;
+    }
 
-  table {
-    border-spacing: 0;
-    border-collapse: collapse;
-    margin: 1.2em auto;
-    padding: 0;
-    display: block;
-    overflow-x: auto;
-  }
+    & h1,
+    & h2,
+    & h3,
+    & h4,
+    & strong {
+      font-weight: 600;
+      color: #222;
+    }
 
-  table td,
-  table th {
-    line-height: 1.5em;
-    padding: 0.4em 0.8em;
-    border: none;
-    border: 1px solid #ddd;
-  }
+    & h1 {
+      margin: 0 0 1em;
+    }
 
-  table th {
-    font-weight: bold;
-    text-align: left;
-  }
+    & h2 {
+      margin: 45px 0 0.8em;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ddd;
+    }
 
-  table th,
-  table tr:nth-child(2n) {
-    background-color: #f8f8f8;
-  }
+    & h3 {
+      margin: 52px 0 1.2em;
+    }
 
-  table th code,
-  table tr:nth-child(2n) code {
-    background-color: #efefef;
+    & h5 {
+      font-size: 0.875em;
+    }
+
+    & h6 {
+      font-size: 0.75em;
+    }
+
+    & code,
+    & pre {
+      font-family: "Roboto Mono", Monaco, courier, monospace;
+      font-size: 0.8em;
+      background-color: #f8f8f8;
+      -webkit-font-smoothing: initial;
+      -moz-osx-font-smoothing: initial;
+    }
+
+    & code {
+      color: #e96900;
+      padding: 3px 5px;
+      margin: 0 2px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    & pre code {
+      color: #525252;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    & p,
+    & ul,
+    & ol {
+      line-height: 1.7em;
+    }
+
+    & p {
+      word-spacing: 0.05em;
+    }
+
+    & address {
+      font-style: normal;
+    }
+
+    & input,
+    & textarea,
+    & keygen,
+    & select,
+    & button {
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    & input,
+    & button,
+    & submit {
+      border: none;
+      outline: none;
+      padding: 0;
+    }
+
+    & pre code {
+      color: #525252;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    & table {
+      border-spacing: 0;
+      border-collapse: collapse;
+      margin: 1.2em auto;
+      padding: 0;
+      display: block;
+      overflow-x: auto;
+    }
+
+    & table td,
+    & table th {
+      line-height: 1.5em;
+      padding: 0.4em 0.8em;
+      border: none;
+      border: 1px solid #ddd;
+    }
+
+    & table th {
+      font-weight: bold;
+      text-align: left;
+    }
+
+    & table th,
+    & table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    & table th code,
+    & table tr:nth-child(2n) code {
+      background-color: #efefef;
+    }
   }
 
 </style>
