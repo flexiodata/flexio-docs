@@ -6,8 +6,8 @@ paths.forEach(function(path) {
   try {
     docs.push({
       label: path,
-      yaml_text: require('raw-loader!./def/' + path + '.yml'),
-      json_text: require('json-loader!yaml-loader!./def/' + path + '.yml'),
+      yaml_text: require('raw-loader!../def/' + path + '.yml'),
+      json_text: require('json-loader!yaml-loader!../def/' + path + '.yml'),
       is_valid: true
     })
   }
