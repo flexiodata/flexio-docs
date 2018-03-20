@@ -1,7 +1,0 @@
-{
-  "devDependencies": {
-    "json-loader": "^0.5.7",
-    "raw-loader": "^0.5.1",
-    "yaml-loader": "^0.5.0"
-  }
-}
