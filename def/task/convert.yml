@@ -14,12 +14,12 @@ returns: |
   The body response for the HTTP request.
 
 parameters:
-  - property: input
+  - property: '`input`'
     type: object
     description: |
       Format specifier for the input; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
 
-  - property: output
+  - property: '`output`'
     type: object
     description: |
       Format specifier for the output; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.

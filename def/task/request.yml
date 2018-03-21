@@ -14,42 +14,42 @@ returns: |
   The body response for the HTTP request.
 
 parameters:
-  - property: url
+  - property: '`url`'
     type: string
     description: |
       The URL of which to issue the request.
 
-  - property: method
+  - property: '`method`'
     type: string
     description: |
       The HTTP method to use when making the request; options are: `GET` and `POST`.
 
-  - property: connection
+  - property: '`connection`'
     type: string
     description: |
-      Optional connection identifier to issue the request to; if a connection identifier is specified, parameters specified in the connection object are used as the default settings for the request with any additional parameters overriding the request parameters and any specified url in the request begin appended to the base url specified in the connection.
+      Optional connection identifier to issue the request to; if a connection identifier is specified, parameters specified in the connection object are used as the default settings for the request with any additional parameters overriding the request parameters and any specified url in the request begin appended to the base `url` specified in the connection.
 
-  - property: username
+  - property: '`username`'
     type: string
     description: |
       Any username to use for basic authentication.
 
-  - property: password
+  - property: '`password`'
     type: string
     description: |
       Any password to use for basic authentication.
 
-  - property: params
+  - property: '`params`'
     type: object
     description: |
       Data to include as URL parameters in a GET request.
 
-  - property: data
+  - property: '`data`'
     type: "object&#124;string"
     description: |
       Data to include in a POST request.
 
-  - property: headers
+  - property: '`headers`'
     type: object
     description: |
       An object with where the keys are the HTTP headers to set and the corresponding values are the values to which to set those headers.
