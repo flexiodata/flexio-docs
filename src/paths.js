@@ -25,4 +25,4 @@ const paths = [
   'task/write'
 ]
 
-export default paths
+module.exports = paths

@@ -16,7 +16,8 @@
   import yaml from 'js-yaml'
   import marked from 'marked'
   import CodeMirror from 'codemirror'
-  import render from '../render'
+
+  const render = require('../render')
 
   require('codemirror/mode/yaml/yaml.js')
   require('codemirror/mode/javascript/javascript.js')

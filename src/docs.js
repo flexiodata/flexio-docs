@@ -1,4 +1,4 @@
-import paths from './paths'
+const paths = require('./paths')
 
 var docs = []
 
@@ -24,4 +24,4 @@ paths.forEach(function(path) {
   }
 })
 
-export default docs
+module.exports = docs

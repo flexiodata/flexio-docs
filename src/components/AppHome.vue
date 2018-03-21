@@ -17,7 +17,8 @@
 <script>
   import DocNav from './DocNav'
   import DocDetail from './DocDetail'
-  import docs from '../docs'
+
+  const docs = require('../docs')
 
   var active_doc = docs.find(function(doc) {
     return doc.is_valid

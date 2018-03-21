@@ -1,7 +1,7 @@
-import docs from './docs'
-import render from './render'
+const docs = require('./docs')
+const render = require('./render')
 
-var main = {
+const main = {
   docs,
   getMarkdown(path, key) {
     var doc = docs.find(function(doc) { return doc.path === path })
@@ -9,4 +9,4 @@ var main = {
   }
 }
 
-export default main
+module.exports = main

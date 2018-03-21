@@ -63,7 +63,7 @@ function _capitalizeFirstLetter(string) {
 
 /* exports */
 
-export default {
+module.exports = {
   isPrimitive: _isPrimitive,
   isObject: _isObject,
   isPlainObject: _isPlainObject,

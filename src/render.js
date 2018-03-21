@@ -1,4 +1,4 @@
-import util from './util'
+const util = require('./util')
 
 function _toMarkdownList(arr) {
   var md = ''
@@ -53,9 +53,8 @@ function _toMarkdown(val) {
 
 /* exports */
 
-export default {
+module.exports = {
   toMarkdownList: _toMarkdownList,
   toMarkdownTable: _toMarkdownTable,
   toMarkdown: _toMarkdown
 }
-
