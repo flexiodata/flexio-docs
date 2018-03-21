@@ -1,7 +1,7 @@
 {
-  "name": "flexio-docs-app",
+  "name": "flexio-docs",
   "version": "1.0.0",
-  "description": "Flex.io Structured Docs App",
+  "description": "Flex.io Structured Docs",
   "author": "David Z. Williams <dave@flex.io>",
   "main": "src/main.js",
   "private": true,
