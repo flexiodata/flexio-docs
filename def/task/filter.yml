@@ -1,21 +1,16 @@
 name: Filter
 
 method_name:
-  javascript: convert
+  javascript: filter
 
 description: |
-  Filters the input from one format to another.
+  Filters the rows of the input, passing on rows that satisfy the `where` condition.
 
 returns: |
-  Returns the body response for the HTTP request.
+  Returns the filtered input.
 
 parameters:
-  - property: '`input`'
-    type: object
+  - property: '`where`'
+    type: string
     description: |
-      Format specifier for the input; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
-
-  - property: '`output`'
-    type: object
-    description: |
-      Format specifier for the output; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
+      The filter expression to use to determine whether or not to pass on a row from the input to the output.
