@@ -2,16 +2,12 @@ name: Convert
 
 method_name:
   javascript: convert
-  php: convert
-
-short_description: |
-  Converts the input from one format to another.
 
 description: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit dui posuere interdum tristique. Pellentesque nunc purus, sodales eget vulputate eget, auctor in quam. Pellentesque vehicula lacus euismod augue tristique lacinia. Nam id iaculis arcu. Curabitur non tincidunt ex. Integer et gravida enim. Proin congue id justo eget imperdiet.
+  Converts the input from one format to another.
 
 returns: |
-  The body response for the HTTP request.
+  Returns the body response for the HTTP request.
 
 parameters:
   - property: '`input`'

@@ -2,16 +2,12 @@ name: Request
 
 method_name:
   javascript: request
-  php: request
-
-short_description: |
-  Issues an HTTP request.
 
 description: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit dui posuere interdum tristique. Pellentesque nunc purus, sodales eget vulputate eget, auctor in quam. Pellentesque vehicula lacus euismod augue tristique lacinia. Nam id iaculis arcu. Curabitur non tincidunt ex. Integer et gravida enim. Proin congue id justo eget imperdiet.
+  Issues an HTTP request.
 
 returns: |
-  The body response for the HTTP request.
+  Returns the body response for the HTTP request.
 
 parameters:
   - property: '`url`'

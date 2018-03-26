@@ -1,1 +1,16 @@
 name: Echo
+
+method_name:
+  javascript: echo
+
+description: |
+  Writes the specified message to the output.
+
+returns: |
+  Returns the value specified in `msg`.
+
+parameters:
+  - property: '`msg`'
+    type: string
+    description: |
+      Value to write to the output.
