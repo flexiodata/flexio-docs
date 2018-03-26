@@ -1,1 +1,21 @@
 name: Filter
+
+method_name:
+  javascript: convert
+
+description: |
+  Filters the input from one format to another.
+
+returns: |
+  Returns the body response for the HTTP request.
+
+parameters:
+  - property: '`input`'
+    type: object
+    description: |
+      Format specifier for the input; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
+
+  - property: '`output`'
+    type: object
+    description: |
+      Format specifier for the output; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.

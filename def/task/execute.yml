@@ -1,1 +1,32 @@
 name: Execute
+
+method_name:
+  javascript: execute
+
+description: |
+  Executes code that's specified inline or in another location, such as a source control repository.
+
+returns: |
+  Returns the results written to the context object output in the code.
+
+parameters:
+  - property: '`lang`'
+    type: string
+    description: |
+      The language to execute, using the `path` if supplied or the code specifed as base64 content in `code`; `lang` may be either 'javascript' if the code to execute is Javascript or 'python' if the code to execute is Python.
+
+  - property: '`code`'
+    type: string
+    description: |
+      The base64-encoded code to execute; takes precendence over any code at `path`.
+
+  - property: '`path`'
+    type: string
+    description: |
+      The URL of the code to execute (e.g. GitHub file URL); if both `path` and `code` are specified, the code locally defined in `code` overrides the code at `path`.
+
+  - property: '`integrity`'
+    type: string
+    description: |
+      The optional integrity check for the code; if the code given by `code` or located in the remote path doesn't match the integrity check, then it fails; integrity checks may use either sha256, sha384, or sha512 values and are specified as 'sha256:{base64-sha256-value}', 'sha384:{base64-sha384-value}' or 'sha512:{base64-sha512-value}'.
+
