@@ -1,0 +1,16 @@
+name: List
+
+method_name:
+  javascript: list
+
+description: |
+  Lists the contents of adirectory
+
+returns: |
+  Returns the contents of the specified directory
+
+parameters:
+  - property: 'from`'
+    type: string
+    description: |
+      The path of the directory to list
