@@ -43,12 +43,15 @@ function readFiles(folder_name, recursive, onFileContent, onError) {
   })
 }
 
-function readFolder(folder_name, recursive) {
+function readFolder(folder_name, recursive, interceptor) {
+  if (typeof interceptor != 'function')
+    interceptor = function(c) { return c }
+
   var data = {}
   readFiles(folder_name, recursive, function(filename, content, full_path) {
     var key = full_path.substring(folder_name.length)
     key = normalizeObjectKey(key)
-    set(data, key, content)
+    set(data, key, interceptor(content))
   }, function(err) {
     throw err
   })

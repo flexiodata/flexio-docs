@@ -14,9 +14,27 @@ const GenerateJsonPlugin = require('generate-json-webpack-plugin')
 
 const env = require('../config/prod.env')
 
-// create JSON object of all docs
+
+
+
 const readFolder = require('../src/read-folder')
-const docs_yaml = readFolder(path.resolve(__dirname, '../def'), true)
+const yaml = require('js-yaml')
+const marked = require('marked')
+const render = require('../src/render')
+
+// create JSON object of markup for all docs
+const docs_markup = readFolder(path.resolve(__dirname, '../def'), true, function(content) {
+  var json = yaml.load(content)
+
+  for (var key in json) {
+    if (json.hasOwnProperty(key)) {
+      var val = json[key]
+      json[key] = marked(render.toMarkdown(val))
+    }
+  }
+
+  return json
+})
 
 
 
@@ -125,7 +143,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
 
-    new GenerateJsonPlugin(utils.assetsPath('json/docs-yaml.json'), docs_yaml)
+    new GenerateJsonPlugin(utils.assetsPath('json/docs.json'), docs_markup),
+    new GenerateJsonPlugin(utils.assetsPath('json/docs-pretty.json'), docs_markup, null, 2)
   ]
 })
 
