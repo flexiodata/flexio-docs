@@ -10,8 +10,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const GenerateJsonPlugin = require('generate-json-webpack-plugin')
 
 const env = require('../config/prod.env')
+
+// create JSON object of all docs
+const readFolder = require('../src/read-folder')
+const docs_yaml = readFolder(path.resolve(__dirname, '../def'), true)
+
+
+
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -115,7 +123,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    new GenerateJsonPlugin(utils.assetsPath('json/docs-yaml.json'), docs_yaml)
   ]
 })
 
