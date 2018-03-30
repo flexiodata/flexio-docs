@@ -61,6 +61,21 @@ function _capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+/**
+ * This function handles arrays and objects
+ */
+function _eachRecursive(obj, path, callback) {
+  if (typeof path != 'string')
+    path = ''
+
+  for (var k in obj) {
+    if (typeof obj[k] == 'object' && obj[k] !== null)
+      _eachRecursive(obj[k], path.length > 0 ? path + '.' + k : k)
+       else
+      callback(obj[k], path)
+  }
+}
+
 /* exports */
 
 module.exports = {
@@ -69,5 +84,6 @@ module.exports = {
   isPlainObject: _isPlainObject,
   isLikeList: _isLikeList,
   isLikeTable: _isLikeTable,
-  capitalizeFirstLetter: _capitalizeFirstLetter
+  capitalizeFirstLetter: _capitalizeFirstLetter,
+  eachRecursive: _eachRecursive
 }

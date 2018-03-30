@@ -10,8 +10,34 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const GenerateJsonPlugin = require('generate-json-webpack-plugin')
 
 const env = require('../config/prod.env')
+
+
+
+
+const readFolder = require('../src/read-folder')
+const yaml = require('js-yaml')
+const marked = require('marked')
+const render = require('../src/render')
+
+// create JSON object of markup for all docs
+const docs_markup = readFolder(path.resolve(__dirname, '../def'), true, function(content) {
+  var json = yaml.load(content)
+
+  for (var key in json) {
+    if (json.hasOwnProperty(key)) {
+      var val = json[key]
+      json[key] = marked(render.toMarkdown(val))
+    }
+  }
+
+  return json
+})
+
+
+
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -115,7 +141,10 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    new GenerateJsonPlugin(utils.assetsPath('json/docs.json'), docs_markup),
+    new GenerateJsonPlugin(utils.assetsPath('json/docs-pretty.json'), docs_markup, null, 2)
   ]
 })
 
