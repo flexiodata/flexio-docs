@@ -9,7 +9,7 @@ description: |
 returns: |
   Returns the body response for the HTTP request.
 
-parameters:
+rest_parameters:
   - property: '`input`'
     type: object
     description: |
@@ -19,3 +19,19 @@ parameters:
     type: object
     description: |
       Format specifier for the output; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
+
+json_str: |
+  {
+    "op": "convert",
+    "params": {
+      "input": {
+        "format": "delimited",
+        "delimiter": "{comma}",
+        "header": true,
+        "qualifier": "{none}"
+      },
+      "output": {
+        "format": ""
+      }
+    }
+  }

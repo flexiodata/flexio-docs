@@ -7,15 +7,49 @@ description: |
   Renders the input from one format to another.
 
 returns: |
-  Returns the body response for the HTTP request.
+  Returns the rendered content for the URL.
 
-parameters:
-  - property: '`input`'
-    type: object
-    description: |
-      Format specifier for the input; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
+rest_parameters:
+  - property: '`url`'
+    type: string
+    description: The URL of which to render.
 
-  - property: '`output`'
-    type: object
-    description: |
-      Format specifier for the output; the primary parameter for this object is `format` and may be one of the following: `delimited`, `fixed`, `json`, `rss`, `pdf`, `table`.
+  - property: '`format`'
+    type: string
+    description: 'The format to return the rendered URL in; current options are `pdf`, `png`, and `jpeg`.'
+
+  - property: '`paper`'
+    type: string
+    description: 'The paper size to use when outputting to a PDF; current options are `letter` and `A4`.'
+
+  - property: '`width`'
+    type: string
+    description: The width in pixels to use when formatting the URL that's being rendered.
+
+  - property: '`height`'
+    type: string
+    description: The height in pixels to use when formatting the URL that's being rendered.
+
+  - property: '`full`'
+    type: boolean
+    description: Whether or not to render the entire URL when outputting as an image.
+
+  - property: '`landscape`'
+    type: boolean
+    description: Whether or not to use landscape mode when outputting to a PDF.
+
+  - property: '`scrollbars`'
+    type: boolean
+    description: Whether or not to include scrollbars when rendering the URL.
+
+json_str: |
+  {
+    "op": "render",
+    "params": {
+      "url": "https://www.flex.io",
+      "format": "png",
+      "width": "800",
+      "height": "600",
+      "scrollbars": false
+    }
+  }

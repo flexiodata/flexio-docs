@@ -9,7 +9,7 @@ description: |
 returns: |
   Returns the results written to the context object output in the code.
 
-parameters:
+rest_parameters:
   - property: '`lang`'
     type: string
     description: |
@@ -30,3 +30,13 @@ parameters:
     description: |
       The optional integrity check for the code; if the code given by `code` or located in the remote path doesn't match the integrity check, then it fails; integrity checks may use either sha256, sha384, or sha512 values and are specified as 'sha256:{base64-sha256-value}', 'sha384:{base64-sha384-value}' or 'sha512:{base64-sha512-value}'.
 
+json_str: |
+  {
+    "op": "execute",
+    "params": {
+      "lang": "python",
+      "code": "ZGVmIGZsZXhpb19oYW5kbGVyKGNvbnRleHQpOg0KICAgIGNvbnRleHQub3V0cHV0LmNvbnRlbnRfdHlwZSA9ICJ0ZXh0L3BsYWluIg0KICAgIGNvbnRleHQub3V0cHV0LndyaXRlKCJIZWxsbywgV29ybGQhIik=",
+      "path": "",
+      "integrity": ""
+    }
+  }

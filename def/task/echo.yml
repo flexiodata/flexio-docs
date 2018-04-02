@@ -9,8 +9,16 @@ description: |
 returns: |
   Returns the value specified in `msg`.
 
-parameters:
+rest_parameters:
   - property: '`msg`'
     type: string
     description: |
       Value to write to the output.
+
+json_str: |
+  {
+    "op": "echo",
+    "params": {
+      "msg": "Hello, World!"
+    }
+  }

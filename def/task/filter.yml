@@ -9,8 +9,16 @@ description: |
 returns: |
   Returns the filtered input.
 
-parameters:
+rest_parameters:
   - property: '`where`'
     type: string
     description: |
       The filter expression to use to determine whether or not to pass on a row from the input to the output.
+
+json_str: |
+  {
+    "op": "filter",
+    "params": {
+      "where": "'id' = 1"
+    }
+  }

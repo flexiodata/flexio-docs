@@ -23,7 +23,12 @@ const marked = require('marked')
 const render = require('../src/render')
 
 // create JSON object of markup for all docs
-const docs_markup = readFolder(path.resolve(__dirname, '../def'), true, function(content) {
+const docs_json = readFolder(path.resolve(__dirname, '../def'), true, function(content) {
+  return yaml.load(content)
+})
+
+/*
+, function(content) {
   var json = yaml.load(content)
 
   for (var key in json) {
@@ -35,8 +40,7 @@ const docs_markup = readFolder(path.resolve(__dirname, '../def'), true, function
 
   return json
 })
-
-
+*/
 
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -143,8 +147,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     ]),
 
-    new GenerateJsonPlugin(utils.assetsPath('json/docs.json'), docs_markup),
-    new GenerateJsonPlugin(utils.assetsPath('json/docs-pretty.json'), docs_markup, null, 2)
+    new GenerateJsonPlugin(utils.assetsPath('json/docs.json'), docs_json),
+    new GenerateJsonPlugin(utils.assetsPath('json/docs-pretty.json'), docs_json, null, 2)
   ]
 })
 

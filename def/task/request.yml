@@ -9,7 +9,7 @@ description: |
 returns: |
   Returns the body response for the HTTP request.
 
-parameters:
+rest_parameters:
   - property: '`url`'
     type: string
     description: |
@@ -49,3 +49,12 @@ parameters:
     type: object
     description: |
       An object with where the keys are the HTTP headers to set and the corresponding values are the values to which to set those headers.
+
+json_str: |
+  {
+    "op": "request",
+    "params": {
+      "method": "GET",
+      "url": "https://www.flex.io"
+    }
+  }
