@@ -12,7 +12,7 @@ returns: |
 rest_parameters:
   - property: '`url`'
     type: string
-    description: The URL of which to render.
+    description: The URL of the webpage to render.
 
   - property: '`format`'
     type: string

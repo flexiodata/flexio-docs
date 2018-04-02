@@ -13,7 +13,7 @@ rest_parameters:
   - property: '`url`'
     type: string
     description: |
-      The URL of which to issue the request.
+      The URL to issue the request to.
 
   - property: '`method`'
     type: string
@@ -48,7 +48,7 @@ rest_parameters:
   - property: '`headers`'
     type: object
     description: |
-      An object with where the keys are the HTTP headers to set and the corresponding values are the values to which to set those headers.
+      An object where the keys are the HTTP headers to set and the corresponding values are the values of those headers.
 
 json_str: |
   {

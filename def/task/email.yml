@@ -1,0 +1,43 @@
+name: Email
+
+method_name:
+  javascript: email
+
+description: |
+  Sends an email.
+
+returns: |
+  Returns the input.
+
+rest_parameters:
+  - property: '`to`'
+    type: string
+    description: The email address to send the message to.
+
+  - property: '`subject`'
+    type: string
+    description: The subject of the email.
+
+  - property: '`body_text`'
+    type: string
+    description: The plain text content of the email.
+
+  - property: '`body_html`'
+    type: string
+    description: The HTML content of the email.
+
+  - property: '`data`'
+    type: string
+    description: 'An enumeration indicating whether or not to include the input in the email; if `none` is specified, the input will not be included in the email; if `body` is specified, the input will be appended to the body of the email content; if `attachment` is specified, the input will be included in the email as an attachment.'
+
+json_str: |
+  {
+    "op": "email",
+    "params": {
+      "to": "flexio@mailinator.com",
+      "subject": "Daily report",
+      "body_text": "Attached, please find the latest figures",
+      "body_html": "",
+      "data": "attachment"
+    }
+  }
