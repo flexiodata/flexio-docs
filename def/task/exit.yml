@@ -1,0 +1,23 @@
+name: Exit
+
+method_name:
+  javascript: exit
+
+description: |
+  Stops the execution of the process.
+
+returns: |
+  Returns an HTTP header with the assigned code.
+
+rest_parameters:
+  - property: '`code`'
+    type: string
+    description: The HTTP header code to return with the result.
+
+json_str: |
+  {
+    "op": "exit",
+    "params": {
+      "code": "404"
+    }
+  }
