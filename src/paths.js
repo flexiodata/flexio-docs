@@ -20,7 +20,6 @@ const paths = [
   'task/sequence',
   'task/set',
   'task/sleep',
-  'task/task',
   'task/transform',
   'task/write'
 ]

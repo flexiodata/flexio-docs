@@ -4,13 +4,21 @@ method_name:
   javascript: copy
 
 description: |
-  Copies files and directories from one location to another
+  Copies files and directories from one location to another.
 
 returns: |
   No output.
 
-parameters:
-  - property: 'from`'
+rest_parameters:
+  - property: '`from`'
     type: string
     description: |
-      The source filespec. This may be a file, directory, or a filespec containing a path wildcard
+      The source filespec. This may be a file, directory, or a filespec containing a path wildcard.
+
+json_str: |
+  {
+    "op": "copy",
+    "params": {
+      "from": ""
+    }
+  }
