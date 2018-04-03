@@ -15,9 +15,10 @@ rest_parameters:
     description: An array of the column names to include in the result.
 
 json_str: |
-  "op": "select",
-  "params": {
-    "columns": [
-      "name"
-    ]
+  {
+    "op": "select",
+    "params": {
+      "columns": [
+        "name"
+      ]
   }
