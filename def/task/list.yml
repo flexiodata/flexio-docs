@@ -4,13 +4,21 @@ method_name:
   javascript: list
 
 description: |
-  Lists the contents of adirectory
+  Lists the contents of a directory.
 
 returns: |
-  Returns the contents of the specified directory
+  Returns the contents of the specified directory.
 
-parameters:
-  - property: 'from`'
+rest_parameters:
+  - property: '`from`'
     type: string
     description: |
-      The path of the directory to list
+      The path of the directory contents to list.
+
+json_str: |
+  {
+    "op": "list",
+    "params": {
+      "path": ""
+    }
+  }
