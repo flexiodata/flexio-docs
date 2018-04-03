@@ -1,0 +1,23 @@
+name: Select
+
+method_name:
+  javascript: select
+
+description: |
+  Selects the specified columns and returns only these columns in the result.
+
+returns: |
+  Returns the selected columns.
+
+rest_parameters:
+  - property: '`columns`'
+    type: array
+    description: An array of the column names to include in the result.
+
+json_str: |
+  "op": "select",
+  "params": {
+    "columns": [
+      "name"
+    ]
+  }

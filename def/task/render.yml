@@ -1,7 +1,7 @@
 name: Render
 
 method_name:
-  javascript: convert
+  javascript: render
 
 description: |
   Renders the input from one format to another.
