@@ -26,9 +26,9 @@ rest_parameters:
     type: string
     description: The HTML content of the email.
 
-  - property: '`data`'
-    type: string
-    description: 'An enumeration indicating whether or not to include the input in the email; if `none` is specified, the input will not be included in the email; if `body` is specified, the input will be appended to the body of the email content; if `attachment` is specified, the input will be included in the email as an attachment.'
+  - property: '`attachments`'
+    type: array
+    description: 'A list of files to send as attachments to the email. The files can listed either as an object in the form {"file": "<path>"} or as a string "<path>" where the path is the connection alias followed by the path of the file within that connection.'
 
 json_str: |
   {
@@ -38,6 +38,9 @@ json_str: |
       "subject": "Daily report",
       "body_text": "Attached, please find the latest figures",
       "body_html": "",
-      "data": "attachment"
+      "attachments": [
+        {"file": "/my-connection-alias/file1.txt"},
+        "/my-connection-alias/file2.txt"
+      ]
     }
   }
