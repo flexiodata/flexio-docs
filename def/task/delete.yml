@@ -1,0 +1,17 @@
+name: Delete
+
+method_name:
+  javascript: delete
+
+description:
+
+returns:
+
+rest_parameters:
+
+json_str: |
+  {
+    "op": "delete",
+    "params": {
+    }
+  }

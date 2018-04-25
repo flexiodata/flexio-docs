@@ -1,0 +1,17 @@
+name: Mkdir
+
+method_name:
+  javascript: mkdir
+
+description:
+
+returns:
+
+rest_parameters:
+
+json_str: |
+  {
+    "op": "mkdir",
+    "params": {
+    }
+  }

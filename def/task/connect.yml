@@ -1,0 +1,17 @@
+name: Connect
+
+method_name:
+  javascript: connect
+
+description:
+
+returns:
+
+rest_parameters:
+
+json_str: |
+  {
+    "op": "connect",
+    "params": {
+    }
+  }

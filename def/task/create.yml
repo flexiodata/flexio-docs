@@ -1,0 +1,17 @@
+name: Create
+
+method_name:
+  javascript: create
+
+description:
+
+returns:
+
+rest_parameters:
+
+json_str: |
+  {
+    "op": "create",
+    "params": {
+    }
+  }

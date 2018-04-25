@@ -1,0 +1,17 @@
+name: Insert
+
+method_name:
+  javascript: insert
+
+description:
+
+returns:
+
+rest_parameters:
+
+json_str: |
+  {
+    "op": "insert",
+    "params": {
+    }
+  }

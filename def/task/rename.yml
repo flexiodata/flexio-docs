@@ -1,0 +1,17 @@
+name: Rename
+
+method_name:
+  javascript: rename
+
+description:
+
+returns:
+
+rest_parameters:
+
+json_str: |
+  {
+    "op": "rename",
+    "params": {
+    }
+  }
