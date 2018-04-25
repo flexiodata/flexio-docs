@@ -14,11 +14,16 @@ rest_parameters:
     type: string
     description: |
       The source filespec. This may be a file, directory, or a filespec containing a path wildcard.
+  - property: '`to`'
+    type: string
+    description: |
+      The target filespec. This may be a file or directory.
 
 json_str: |
   {
     "op": "copy",
     "params": {
-      "from": ""
+      "from": "",
+      "to": ""
     }
   }
