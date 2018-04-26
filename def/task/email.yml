@@ -28,7 +28,7 @@ rest_parameters:
 
   - property: '`attachments`'
     type: array
-    description: 'A list of files to send as attachments to the email. The files can listed either as an object in the form {"file": "<path>"} or as a string "<path>" where the path is the connection alias followed by the path of the file within that connection.'
+    description: 'A list of files to send as attachments to the email. The files to attach are specified as strings and/or objects, where the file path is a connection alias followed by the file path within that connection.  If a files is listed as an object, the path of the file to attach is specified in the "file" property with an optional name and content type being specified with a "name" and "mime_type" property respectively.
 
 json_str: |
   {
@@ -39,8 +39,10 @@ json_str: |
       "body_text": "Attached, please find the latest figures",
       "body_html": "",
       "attachments": [
-        {"file": "/my-connection-alias/file1.txt"},
-        "/my-connection-alias/file2.txt"
+        "/my-connection-alias/file1.txt"
+        {"file": "/my-connection-alias/file2.txt"},
+        {"file": "/my-connection-alias/file3.txt", "name": "name.txt"},
+        {"file": "/my-connection-alias/file4.txt", "name": "name.json", "mime_type", "application/json"},
       ]
     }
   }
