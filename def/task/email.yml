@@ -28,7 +28,12 @@ rest_parameters:
 
   - property: '`attachments`'
     type: array
-    description: 'A list of files to send as attachments to the email. The files to attach are specified as strings and/or objects, where the file path is a connection alias followed by the file path within that connection.  If a files is listed as an object, the path of the file to attach is specified in the "file" property with an optional name and content type being specified with a "name" and "mime_type" property respectively.'
+    description: >
+      A list of files to send as attachments to the email. The files to attach  are specified
+      as strings and/or objects, where the file path is a connection alias followed by the file path
+      within that connection. If a files is listed as an object, the path of the file to attach
+      is specified in the `file` property with an optional name and content type being specified
+      with a `name` and `mime_type` property respectively.
 
 json_str: |
   {
