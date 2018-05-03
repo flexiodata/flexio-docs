@@ -18,11 +18,11 @@ rest_parameters:
     type: string
     description: The subject of the email.
 
-  - property: '`body_text`'
+  - property: '`body`'
     type: string
     description: The plain text content of the email.
 
-  - property: '`body_html`'
+  - property: '`html`'
     type: string
     description: The HTML content of the email.
 
@@ -36,8 +36,8 @@ json_str: |
     "params": {
       "to": "flexio@mailinator.com",
       "subject": "Daily report",
-      "body_text": "Attached, please find the latest figures",
-      "body_html": "",
+      "body": "Attached, please find the latest figures",
+      "html": "",
       "attachments": [
         "/my-connection-alias/file1.txt"
         {"file": "/my-connection-alias/file2.txt"},
