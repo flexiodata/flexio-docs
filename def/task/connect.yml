@@ -4,12 +4,36 @@ method_name:
   javascript: connect
 
 description:
+  Creates a connection handle that can be used in other tasks to create, read, write, delete, and list files in cloud storage.
 
 returns:
+  No output.
 
 rest_parameters:
+  - property: '`alias`'
+    type: string
+    description: |
+      Alias to use when referencing this connection in other tasks.
+
+  - property: '`connection_type`'
+    type: string
+    description: |
+      Type of connection to create
+
+  - property: '`connection_info`'
+    type: object
+    description: |
+      Key/values necessary to connect to various cloud storage; connection-specific.
 
 json_str: |
   {
-    "op": "connect"
+    "op": "connect",
+    "alias": "my-cloud-storage",
+    "connection_type": "amazons3",
+    "connection_info": {
+      "aws_key": "my-aws-key",
+      "aws_secret": "my-aws-secret",
+      "bucket": "my-s3-bucket",
+      "region": "us-east-1"
+    }
   }

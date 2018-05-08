@@ -7,12 +7,15 @@ description: |
   Stops the execution of the process.
 
 returns: |
-  Returns an HTTP header with the assigned code.
+  Returns an HTTP header with the assigned code and the response in the HTTP body.
 
 rest_parameters:
   - property: '`code`'
-    type: string
+    type: integer
     description: The HTTP header code to return with the result.
+  - property: '`response`'
+    type: string
+    description: The response to send.
 
 json_str: |
   {

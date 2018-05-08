@@ -30,6 +30,6 @@ json_str: |
       "qualifier": "{none}"
     },
     "output": {
-      "format": ""
+      "format": "json"
     }
   }
