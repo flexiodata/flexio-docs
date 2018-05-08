@@ -23,15 +23,13 @@ rest_parameters:
 json_str: |
   {
     "op": "convert",
-    "params": {
-      "input": {
-        "format": "delimited",
-        "delimiter": "{comma}",
-        "header": true,
-        "qualifier": "{none}"
-      },
-      "output": {
-        "format": ""
-      }
+    "input": {
+      "format": "delimited",
+      "delimiter": "{comma}",
+      "header": true,
+      "qualifier": "{none}"
+    },
+    "output": {
+      "format": ""
     }
   }
