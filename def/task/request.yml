@@ -53,8 +53,6 @@ rest_parameters:
 json_str: |
   {
     "op": "request",
-    "params": {
-      "method": "GET",
-      "url": "https://www.flex.io"
-    }
+    "method": "GET",
+    "url": "https://www.flex.io"
   }

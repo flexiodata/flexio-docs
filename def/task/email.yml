@@ -38,16 +38,14 @@ rest_parameters:
 json_str: |
   {
     "op": "email",
-    "params": {
-      "to": "flexio@mailinator.com",
-      "subject": "Daily report",
-      "body": "Attached, please find the latest figures",
-      "html": "",
-      "attachments": [
-        "/my-connection-alias/file1.txt",
-        {"file": "/my-connection-alias/file2.txt"},
-        {"file": "/my-connection-alias/file3.txt", "name": "name.txt"},
-        {"file": "/my-connection-alias/file4.txt", "name": "name.json", "mime_type", "application/json"}
-      ]
-    }
+    "to": "flexio@mailinator.com",
+    "subject": "Daily report",
+    "body": "Attached, please find the latest figures",
+    "html": "",
+    "attachments": [
+      "/my-connection-alias/file1.txt",
+      {"file": "/my-connection-alias/file2.txt"},
+      {"file": "/my-connection-alias/file3.txt", "name": "name.txt"},
+      {"file": "/my-connection-alias/file4.txt", "name": "name.json", "mime_type", "application/json"}
+    ]
   }

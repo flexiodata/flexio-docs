@@ -18,7 +18,5 @@ rest_parameters:
 json_str: |
   {
     "op": "filter",
-    "params": {
-      "where": "'id' = 1"
-    }
+    "where": "'id' = 1"
   }

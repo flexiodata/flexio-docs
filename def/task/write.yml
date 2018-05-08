@@ -17,7 +17,5 @@ rest_parameters:
 json_str: |
   {
     "op": "write",
-    "params": {
-      "path": ""
-    }
+    "path": ""
   }

@@ -18,7 +18,5 @@ rest_parameters:
 json_str: |
   {
     "op": "read",
-    "params": {
-      "path": ""
-    }
+    "path": ""
   }

@@ -17,8 +17,7 @@ rest_parameters:
 json_str: |
   {
     "op": "select",
-    "params": {
-      "columns": [
-        "name"
-      ]
+    "columns": [
+      "name"
+    ]
   }

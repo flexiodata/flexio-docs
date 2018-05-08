@@ -22,8 +22,6 @@ rest_parameters:
 json_str: |
   {
     "op": "copy",
-    "params": {
-      "from": "",
-      "to": ""
-    }
+    "from": "",
+    "to": ""
   }

@@ -45,11 +45,9 @@ rest_parameters:
 json_str: |
   {
     "op": "render",
-    "params": {
-      "url": "https://www.flex.io",
-      "format": "png",
-      "width": "800",
-      "height": "600",
-      "scrollbars": false
-    }
+    "url": "https://www.flex.io",
+    "format": "png",
+    "width": "800",
+    "height": "600",
+    "scrollbars": false
   }

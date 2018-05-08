@@ -18,7 +18,5 @@ rest_parameters:
 json_str: |
   {
     "op": "echo",
-    "params": {
-      "msg": "Hello, World!"
-    }
+    "msg": "Hello, World!"
   }

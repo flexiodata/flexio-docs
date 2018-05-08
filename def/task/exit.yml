@@ -17,7 +17,6 @@ rest_parameters:
 json_str: |
   {
     "op": "exit",
-    "params": {
-      "code": "404"
-    }
+    "code": 404,
+    "response": "The specified resource does not exist."
   }

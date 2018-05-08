@@ -11,7 +11,5 @@ rest_parameters:
 
 json_str: |
   {
-    "op": "delete",
-    "params": {
-    }
+    "op": "delete"
   }
