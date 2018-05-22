@@ -3,9 +3,9 @@ name: Insert
 method_name:
   javascript: insert
 
-description:
+description: |
 
-returns:
+returns: |
 
 rest_parameters:
 

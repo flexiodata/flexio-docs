@@ -3,10 +3,10 @@ name: Connect
 method_name:
   javascript: connect
 
-description:
+description: |
   Creates a connection handle that can be used in other tasks to create, read, write, delete, and list files in cloud storage.
 
-returns:
+returns: |
   No output.
 
 rest_parameters:

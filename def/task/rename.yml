@@ -3,9 +3,9 @@ name: Rename
 method_name:
   javascript: rename
 
-description:
+description: |
 
-returns:
+returns: |
 
 rest_parameters:
 

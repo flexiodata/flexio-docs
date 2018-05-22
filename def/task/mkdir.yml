@@ -3,10 +3,10 @@ name: Mkdir
 method_name:
   javascript: mkdir
 
-description:
+description: |
   Creates the specified directory.
 
-returns:
+returns: |
 
 rest_parameters:
   - property: '`path`'

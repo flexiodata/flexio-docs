@@ -3,10 +3,10 @@ name: Create
 method_name:
   javascript: create
 
-description:
+description: |
   Creates the specified file.
 
-returns:
+returns: |
   The created file.
 
 rest_parameters:
