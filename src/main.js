@@ -9,7 +9,8 @@ const main = {
   docs: docs,
   getMarkdown: function(relative_path, key) {
     try {
-      var full_path = path.resolve(__dirname, '../def/' + relative_path + '.yml')
+      relative_path = relative_path.replace(/\./g, '\/')
+      var full_path = path.resolve(__dirname, '../def/', relative_path + '.yml')
       var doc = yaml.safeLoad(fs.readFileSync(full_path, 'utf8'))
       return doc && doc[key] ? render.toMarkdown(doc[key]) : ''
     }
