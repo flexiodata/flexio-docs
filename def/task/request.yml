@@ -52,7 +52,14 @@ rest_parameters:
 
 json_str: |
   {
-    "op": "request",
-    "method": "GET",
-    "url": "https://www.flex.io"
+    "method": "POST",
+    "url": "https://api.flex.io/v1/me/pipes",
+    "headers": {
+      "Authorization": "Bearer {token}"
+    },
+    "data": {
+      "name": "Example Pipe",
+      "description": "Example Pipe Created From Request Task"
+    }
   }
+
