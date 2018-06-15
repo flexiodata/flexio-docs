@@ -10,20 +10,20 @@ returns: |
   Returns the body response for the HTTP request.
 
 rest_parameters:
+  - property: '`method`'
+    type: string
+    description: |
+      The HTTP method to use when making the request; options are: `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`.
+
   - property: '`url`'
     type: string
     description: |
       The URL to issue the request to.
 
-  - property: '`method`'
-    type: string
+  - property: '`headers`'
+    type: object
     description: |
-      The HTTP method to use when making the request; options are: `GET` and `POST`.
-
-  - property: '`connection`'
-    type: string
-    description: |
-      Optional connection identifier to issue the request to; if a connection identifier is specified, parameters specified in the connection object are used as the default settings for the request with any additional parameters overriding the request parameters and any specified url in the request begin appended to the base `url` specified in the connection.
+      An object where the keys are the HTTP headers to set and the corresponding values are the values of those headers.
 
   - property: '`username`'
     type: string
@@ -38,17 +38,18 @@ rest_parameters:
   - property: '`params`'
     type: object
     description: |
-      Data to include as URL parameters in a GET request.
+      Data to include as URL parameters in a GET request; these can also be passed in the query string of the URL.
 
   - property: '`data`'
     type: "object&#124;string"
     description: |
-      Data to include in a POST request.
+      Data to include in POST, PUT, PATCH, and DELETE requests.
 
-  - property: '`headers`'
-    type: object
+  - property: '`connection`'
+    type: string
     description: |
-      An object where the keys are the HTTP headers to set and the corresponding values are the values of those headers.
+      Optional connection identifier to issue the request to; if a connection identifier is specified, parameters specified in the connection object are used as the default settings for the request with any additional parameters overriding the request parameters and any specified url in the request begin appended to the base `url` specified in the connection.
+
 
 json_str: |
   {
