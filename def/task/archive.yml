@@ -1,0 +1,22 @@
+name: Archive
+
+method_name:
+  javascript: archive
+
+description: |
+  Creates a zipped or compressed file from stdin or from files.
+
+returns: |
+  Returns a zipped or compressed file.
+
+rest_parameters:
+  - property: '`format`'
+    type: string
+    description: The format of the archive to create; either `zip` or `gzip`.
+
+json_str: |
+  {
+    "op": "archive",
+    "format": "gzip"
+  }
+

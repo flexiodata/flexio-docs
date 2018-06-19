@@ -1,0 +1,22 @@
+name: Unarchive
+
+method_name:
+  javascript: unarchive
+
+description: |
+  Unzips or uncompresses a file.
+
+returns: |
+  Returns the uncompressed files from a compressed file.
+
+rest_parameters:
+  - property: '`format`'
+    type: string
+    description: The format of the file to uncompress; either `zip` or `gzip`.
+
+json_str: |
+  {
+    "op": "unarchive",
+    "format": "gzip"
+  }
+
