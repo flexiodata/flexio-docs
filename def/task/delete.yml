@@ -16,5 +16,5 @@ rest_parameters:
 json_str: |
   {
     "op": "delete",
-    "path": "/my-cloud-storage/file.txt"
+    "path": "my-connection-alias:/file.txt"
   }

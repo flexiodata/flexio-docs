@@ -22,6 +22,6 @@ rest_parameters:
 json_str: |
   {
     "op": "copy",
-    "from": "/my-sftp/*.csv",
-    "to": "/my-cloud-storage/"
+    "from": "my-connection-alias1:/*.csv",
+    "to": "my-connection-alias2:/"
   }
