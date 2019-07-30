@@ -10,10 +10,10 @@ returns: |
   No output.
 
 rest_parameters:
-  - property: '`alias`'
+  - property: '`name`'
     type: string
     description: |
-      Alias to use when referencing this connection in other tasks.
+      Name to use when referencing this connection in other tasks.
 
   - property: '`connection_type`'
     type: string
@@ -28,7 +28,7 @@ rest_parameters:
 json_str: |
   {
     "op": "connect",
-    "alias": "my-cloud-storage",
+    "name": "my-cloud-storage",
     "connection_type": "amazons3",
     "connection_info": {
       "aws_key": "my-aws-key",

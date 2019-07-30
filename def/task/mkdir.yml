@@ -17,5 +17,5 @@ rest_parameters:
 json_str: |
   {
     "op": "mkdir",
-    "path": "my-connection-alias:/directory-in-connection-to-create/"
+    "path": "my-connection-name:/directory-in-connection-to-create/"
   }

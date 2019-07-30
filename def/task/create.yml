@@ -20,6 +20,6 @@ rest_parameters:
 json_str: |
   {
     "op": "create",
-    "path": "my-connection-alias:/file.txt",
+    "path": "my-connection-name:/file.txt",
     "content_type": "text/plain"
   }

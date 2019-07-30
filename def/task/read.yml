@@ -18,5 +18,5 @@ rest_parameters:
 json_str: |
   {
     "op": "read",
-    "path": "my-connection-alias:/file.txt"
+    "path": "my-connection-name:/file.txt"
   }

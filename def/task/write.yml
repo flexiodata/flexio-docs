@@ -17,5 +17,5 @@ rest_parameters:
 json_str: |
   {
     "op": "write",
-    "path": "my-connection-alias:/file.txt"
+    "path": "my-connection-name:/file.txt"
   }

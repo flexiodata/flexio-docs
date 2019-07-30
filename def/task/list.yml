@@ -18,5 +18,5 @@ rest_parameters:
 json_str: |
   {
     "op": "list",
-    "path": "my-connection-alias:/directory-in-connection/"
+    "path": "my-connection-name:/directory-in-connection/"
   }
