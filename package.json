@@ -11,7 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "codemirror": "^5.35.0",
+    "codemirror": "^5.58.2",
     "generate-json-webpack-plugin": "^0.3.0",
     "js-yaml": "^3.11.0",
     "lodash.set": "^4.3.2",
